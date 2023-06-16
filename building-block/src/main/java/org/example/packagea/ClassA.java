@@ -1,4 +1,4 @@
-package packagea;
+package org.example.packagea;
 
 public class ClassA {
 

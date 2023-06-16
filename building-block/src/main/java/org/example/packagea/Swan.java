@@ -1,4 +1,4 @@
-package packagea;
+package org.example.packagea;
 
 public class Swan {
 
@@ -6,7 +6,7 @@ public class Swan {
 
     public static void main(String[] args) {
         Swan mother = new Swan();
-        mother.numberEggs = 1;
+        mother.numberEggs = 777;
         System.out.println(mother.numberEggs);
     }
 }

@@ -1,6 +1,4 @@
-package packageb;
-
-import packagea.ClassA;
+package org.example.packageb;
 
 public class ClassB {
     public static void main(String[] args) {
