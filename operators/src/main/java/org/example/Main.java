@@ -14,6 +14,7 @@ public class Main {
         var stripes = 11;
 
         var animal = stripes < 9 ? 3 : "Horse";
+        int toto = 2*(int)3;
 
         System.out.println(animal);
     }
