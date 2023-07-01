@@ -1,9 +1,48 @@
 package org.example;
 
+import java.time.*;
 import java.util.Arrays;
 
 class Main {
     public static void main(String[] args) {
+        var date = LocalDate.of(2022,5,25);
+        var time = LocalTime.of(11,55,00);
+        var zone = ZoneId.of("US/Eastern");
+        var dateTimeZone = ZonedDateTime.of(date,time,zone);
+        var instant = dateTimeZone.toInstant();
+        System.out.println(dateTimeZone);
+        System.out.println(instant);
+    }
+
+    private static void animalEnrichment() {
+        var start = LocalDate.of(2022,Month.JANUARY,1);
+        var end = LocalDate.of(2022,Month.MARCH,1);
+        var period = Period.ofMonths(1);
+        performAnimalEnrichment(start,end,period);
+    }
+
+    private static void performAnimalEnrichment(LocalDate start, LocalDate end, Period period) {
+        var upTo = start;
+        while(upTo.isBefore(end)){
+            System.out.println("give me new toy " + upTo);
+            upTo = upTo.plus(period);
+        }
+    }
+
+    private static void manipulateDateTime() {
+        var date = LocalDate.of(2024, Month.JANUARY, 20);
+        var time = LocalTime.of(5,15);
+        var dateTime = LocalDateTime.of(date, time);
+        System.out.println(dateTime);
+        dateTime = dateTime.minusDays(1);
+        System.out.println(dateTime);
+        dateTime = dateTime.minusHours(10);
+        System.out.println(dateTime);
+        dateTime = dateTime.minusSeconds(30);
+        System.out.println(dateTime);
+    }
+
+    private static void binarySearchTest() {
         int[] numbers = {3,2,1};
         System.out.println(Arrays.binarySearch(numbers, 2));
         System.out.println(Arrays.binarySearch(numbers, 3));
