@@ -1,12 +1,12 @@
 package org.example;
 
-public class Zebra extends Animal{
+public class Zebra extends Animal {
 
-    public Zebra(int age){
+    public Zebra(int age) {
         super(age);
     }
 
-    public Zebra(){
+    public Zebra() {
         super(4);
     }
 }

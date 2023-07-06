@@ -16,7 +16,7 @@ public class Lion extends Animal {
         this(weight, "brown");
     }
 
-    protected void setProperties(int age, String n){
+    protected void setProperties(int age, String n) {
         setAge(age);
         name = n;
     }

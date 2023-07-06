@@ -3,7 +3,10 @@ package org.example;
 public class Gorilla {
 
     static final int bamboo;
-    static {bamboo = 3;}
+
+    static {
+        bamboo = 3;
+    }
 
     public static int count;
 
@@ -13,7 +16,7 @@ public class Gorilla {
 
     public void babyGorilla() {
         count++;
-        int bad = (int)8l;
+        int bad;
     }
 
     public void announceBabies() {

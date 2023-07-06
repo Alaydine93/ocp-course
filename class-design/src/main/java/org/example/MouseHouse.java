@@ -9,10 +9,11 @@ public class MouseHouse {
         this.volume = 10;
     }
 
-    public MouseHouse(String type){
+    public MouseHouse(String type) {
         this.type = type;
     }
-    public MouseHouse(){
+
+    public MouseHouse() {
         this(null);
     }
 }

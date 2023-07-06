@@ -5,25 +5,25 @@ import java.util.Arrays;
 
 class Main {
     public static void main(String[] args) {
-        var date = LocalDate.of(2022,5,25);
-        var time = LocalTime.of(11,55,00);
+        var date = LocalDate.of(2022, 5, 25);
+        var time = LocalTime.of(11, 55, 00);
         var zone = ZoneId.of("US/Eastern");
-        var dateTimeZone = ZonedDateTime.of(date,time,zone);
+        var dateTimeZone = ZonedDateTime.of(date, time, zone);
         var instant = dateTimeZone.toInstant();
         System.out.println(dateTimeZone);
         System.out.println(instant);
     }
 
     private static void animalEnrichment() {
-        var start = LocalDate.of(2022,Month.JANUARY,1);
-        var end = LocalDate.of(2022,Month.MARCH,1);
+        var start = LocalDate.of(2022, Month.JANUARY, 1);
+        var end = LocalDate.of(2022, Month.MARCH, 1);
         var period = Period.ofMonths(1);
-        performAnimalEnrichment(start,end,period);
+        performAnimalEnrichment(start, end, period);
     }
 
     private static void performAnimalEnrichment(LocalDate start, LocalDate end, Period period) {
         var upTo = start;
-        while(upTo.isBefore(end)){
+        while (upTo.isBefore(end)) {
             System.out.println("give me new toy " + upTo);
             upTo = upTo.plus(period);
         }
@@ -31,7 +31,7 @@ class Main {
 
     private static void manipulateDateTime() {
         var date = LocalDate.of(2024, Month.JANUARY, 20);
-        var time = LocalTime.of(5,15);
+        var time = LocalTime.of(5, 15);
         var dateTime = LocalDateTime.of(date, time);
         System.out.println(dateTime);
         dateTime = dateTime.minusDays(1);
@@ -43,7 +43,7 @@ class Main {
     }
 
     private static void binarySearchTest() {
-        int[] numbers = {3,2,1};
+        int[] numbers = {3, 2, 1};
         System.out.println(Arrays.binarySearch(numbers, 2));
         System.out.println(Arrays.binarySearch(numbers, 3));
     }
@@ -59,7 +59,7 @@ class Main {
         String sub = sb.substring(sb.indexOf("a"), sb.indexOf("al"));
         int len = sb.length();
         char ch = sb.charAt(6);
-        System.out.println("%s %d %s".formatted(sub,len,ch));
+        System.out.println("%s %d %s".formatted(sub, len, ch));
     }
 
     private static void formattedExample() {
@@ -83,8 +83,8 @@ class Main {
                 c""";
 
         var concat = " a\n"
-                   + "  b\n"
-                   + " c";
+                + "  b\n"
+                + " c";
 
         System.out.println(block.length());
         System.out.println(concat.length());

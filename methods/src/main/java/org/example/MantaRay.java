@@ -2,9 +2,14 @@ package org.example;
 
 public class MantaRay {
     private String name = "Sammy";
-    public static void first(){}
-    public static void second(){}
-    public void third(){
+
+    public static void first() {
+    }
+
+    public static void second() {
+    }
+
+    public void third() {
         System.out.println(name);
     }
 

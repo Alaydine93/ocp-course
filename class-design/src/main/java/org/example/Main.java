@@ -2,8 +2,9 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
-        var lion = new Lion();
-        lion.setProperties(3, "toto");
-        lion.roar();
+        var immutableAnimal = new ImmutableAnimal();
+        for (int i = 0; i < immutableAnimal.getFavoriteFoodCount(); i++) {
+            System.out.println(immutableAnimal.getFavoriteFoodItem(i));
+        }
     }
 }
