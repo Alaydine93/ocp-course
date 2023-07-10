@@ -16,6 +16,7 @@
         <module>methods</module>
         <module>class-design</module>
         <module>beyond-classes</module>
+        <module>lambdas</module>
     </modules>
 
     <properties>
