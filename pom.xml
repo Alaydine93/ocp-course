@@ -17,6 +17,7 @@
         <module>class-design</module>
         <module>beyond-classes</module>
         <module>lambdas</module>
+        <module>collections</module>
     </modules>
 
     <properties>
