@@ -18,6 +18,7 @@
         <module>beyond-classes</module>
         <module>lambdas</module>
         <module>collections</module>
+        <module>streams</module>
     </modules>
 
     <properties>
