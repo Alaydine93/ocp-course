@@ -19,6 +19,7 @@
         <module>lambdas</module>
         <module>collections</module>
         <module>streams</module>
+        <module>exceptions-localization</module>
     </modules>
 
     <properties>
