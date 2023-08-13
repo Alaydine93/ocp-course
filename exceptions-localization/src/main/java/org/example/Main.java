@@ -8,6 +8,8 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) {
+        NumberFormatter.numberToCurrency();
+
         DateFormatter.formatDate();
         System.out.println();
 
