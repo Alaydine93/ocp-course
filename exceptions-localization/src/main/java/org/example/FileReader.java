@@ -11,7 +11,6 @@ public class FileReader {
         try (myFile1; var myFile2 = new MyFileClass(2)) {
             System.out.println("try block");
             throw new RuntimeException();
-
         } catch (Exception e) {
             System.out.println("catch block");
         } finally {

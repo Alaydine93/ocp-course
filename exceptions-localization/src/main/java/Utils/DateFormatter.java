@@ -19,6 +19,9 @@ public class DateFormatter {
 
        var formatter1 = DateTimeFormatter.ofPattern("dd/MM/yyyy hh:mm:ss");
        System.out.println(dateTime.format(formatter1));
+   }
 
+   public static void print(DateTimeFormatter dtf, LocalDateTime dateTime, Locale locale) {
+       System.out.println(dtf.format(dateTime) + "---" + dtf.withLocale(locale).format(dateTime));
    }
 }

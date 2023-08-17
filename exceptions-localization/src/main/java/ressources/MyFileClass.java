@@ -10,7 +10,7 @@ public class MyFileClass implements AutoCloseable{
     }
 
     @Override
-    public void close() throws IOException {
+    public void close() {
         System.out.println("Closing " + num);
     }
 }

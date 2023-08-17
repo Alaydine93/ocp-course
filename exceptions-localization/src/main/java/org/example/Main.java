@@ -5,32 +5,30 @@ import Utils.NumberFormatter;
 import ressources.JammedTurkeyCage;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.Month;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
+
+import static java.time.format.FormatStyle.SHORT;
 
 public class Main {
     public static void main(String[] args) {
-        NumberFormatter.numberToCurrency();
+        Locale.setDefault(new Locale("en", "US"));
+        var italy = new Locale("it", "IT");
+        var dt = LocalDateTime.of(2022, Month.DECEMBER, 20, 15, 12, 34);
+        DateFormatter.print(DateTimeFormatter.ofLocalizedDate(SHORT), dt, italy);
 
-        DateFormatter.formatDate();
-        System.out.println();
+    }
 
-        NumberFormatter.formatNumbers();
-        System.out.println();
-
-        try (JammedTurkeyCage cage = new JammedTurkeyCage()) {
-            System.out.println("Put turkeys in cage");
+    private static void suppressedExceptions() {
+        try (var t = new JammedTurkeyCage()){
+            throw new IllegalStateException("Turkey ran off");
         } catch (IllegalStateException e) {
-            System.out.println("Caught " + e.getMessage());
-        }
-        System.out.println();
-        try {
-            System.out.println(args[1]);
-        } catch (ArrayIndexOutOfBoundsException | NumberFormatException e) {
-            System.out.println("Missing or invalid input");
-        }
-        System.out.println();
-        try {
-            FileReader.readFile();
-        } catch (IOException e) {
+            System.out.println("Caught : " + e.getMessage());
+            for(Throwable t : e.getSuppressed()){
+                System.out.println("Suppressed : " + t.getMessage());
+            }
         }
     }
 
