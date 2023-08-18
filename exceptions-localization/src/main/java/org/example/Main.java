@@ -1,7 +1,6 @@
 package org.example;
 
 import Utils.DateFormatter;
-import Utils.NumberFormatter;
 import ressources.JammedTurkeyCage;
 
 import java.io.IOException;
@@ -11,14 +10,20 @@ import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
 import static java.time.format.FormatStyle.SHORT;
+import static org.example.ResourceBundleExamples.printKeyFromPropertiesFile;
+import static org.example.ResourceBundleExamples.*;
 
 public class Main {
     public static void main(String[] args) {
+        printHelloByName();
+
+    }
+
+    private static void printLocalizedDate() {
         Locale.setDefault(new Locale("en", "US"));
         var italy = new Locale("it", "IT");
         var dt = LocalDateTime.of(2022, Month.DECEMBER, 20, 15, 12, 34);
         DateFormatter.print(DateTimeFormatter.ofLocalizedDate(SHORT), dt, italy);
-
     }
 
     private static void suppressedExceptions() {
