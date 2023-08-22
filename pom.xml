@@ -20,6 +20,7 @@
         <module>collections</module>
         <module>streams</module>
         <module>exceptions-localization</module>
+        <module>concurrency</module>
     </modules>
 
     <properties>
