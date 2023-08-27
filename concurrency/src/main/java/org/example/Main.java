@@ -1,12 +1,20 @@
 package org.example;
 
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 public class Main {
     public static void main(String[] args) {
-        singleThreadUsingExecutorService();
+        List<Integer> favNumbers = new CopyOnWriteArrayList<>(List.of(4,3,42));
+        for(var n : favNumbers){
+            System.out.println(n + " ");
+            favNumbers.add(n+1);
+        }
+        System.out.println();
+        System.out.println("Size: " + favNumbers.size());
     }
 
     private static void singleThreadUsingExecutorService() {
