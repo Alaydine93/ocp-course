@@ -8,10 +8,28 @@ import java.util.concurrent.Future;
 
 public class Main {
     public static void main(String[] args) {
-        List<Integer> favNumbers = new CopyOnWriteArrayList<>(List.of(4,3,42));
-        for(var n : favNumbers){
+        deadlockExample();
+    }
+
+    private static void deadlockExample() {
+        var foxy = new Fox("Foxy");
+        var tails = new Fox("Tails");
+        var food = new Food();
+        var water = new Water();
+        var service = Executors.newFixedThreadPool(10);
+        try {
+            service.submit(() -> foxy.eatAndDrink(food, water));
+            service.submit(() -> tails.drinkAndEat(food, water));
+        } finally {
+            service.shutdown();
+        }
+    }
+
+    private static void concurrentCollection() {
+        List<Integer> favNumbers = new CopyOnWriteArrayList<>(List.of(4, 3, 42));
+        for (var n : favNumbers) {
             System.out.println(n + " ");
-            favNumbers.add(n+1);
+            favNumbers.add(n + 1);
         }
         System.out.println();
         System.out.println("Size: " + favNumbers.size());
@@ -21,7 +39,7 @@ public class Main {
         ExecutorService service = Executors.newSingleThreadExecutor();
         Runnable printInventory = () -> System.out.println("Printing zoo inventory");
         Runnable printRecords = () -> {
-            for(int i = 0; i < 3; i++){
+            for (int i = 0; i < 3; i++) {
                 System.out.println("Printing record : " + i);
             }
         };
