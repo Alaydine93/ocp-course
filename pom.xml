@@ -21,6 +21,7 @@
         <module>streams</module>
         <module>exceptions-localization</module>
         <module>concurrency</module>
+        <module>inpout-output</module>
     </modules>
 
     <properties>
