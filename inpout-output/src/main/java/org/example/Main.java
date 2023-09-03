@@ -97,7 +97,7 @@ public class Main {
     }
 
     public static void viewPath() {
-        Path path = Paths.get("/Users/alae-eddine/Dev/zoo.txt");
+        Path path = Paths.get("·/zoo.txt");
         System.out.println("The path name is " + path);
         for (int i = 0; i < path.getNameCount(); i++)
             System.out.println(" Element " + i + " is " + path.getName(i));

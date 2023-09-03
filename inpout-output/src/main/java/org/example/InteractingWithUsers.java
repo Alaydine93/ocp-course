@@ -11,10 +11,14 @@ import java.io.UncheckedIOException;
 import java.nio.file.FileVisitOption;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.stream.Stream;
 
 public class InteractingWithUsers {
 
     public static void main(String... args) throws IOException {
+        findJarFiles(Paths.get("/Users/alae-eddine/Dev/database"));
+        System.out.print(System.lineSeparator() + System.lineSeparator());
         var size = getPathSize(Path.of("/Users/alae-eddine/Dev"));
         System.out.format("Total Size: %.2f megabytes", (size / 1_000_000.0));
         System.out.print(System.lineSeparator() + System.lineSeparator());
@@ -30,6 +34,13 @@ public class InteractingWithUsers {
                     .sum();
         }
     }
+
+    public static void findJarFiles(Path source) throws IOException {
+        try (Stream<Path> s = Files.find(source, 10, (p, a) -> a.isRegularFile() && p.toString().endsWith(".jar"))) {
+            s.forEach(System.out::println);
+        }
+    }
+
 
     private static long getSize(Path p) {
         try {
