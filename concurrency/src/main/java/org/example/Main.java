@@ -1,5 +1,8 @@
 package org.example;
 
+import java.time.LocalDate;
+import java.time.Month;
+import java.time.Period;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.ExecutorService;
@@ -8,8 +11,13 @@ import java.util.concurrent.Future;
 
 public class Main {
     public static void main(String[] args) {
-        deadlockExample();
+        LocalDate now = LocalDate.now();
+        LocalDate test = LocalDate.of(2023, Month.DECEMBER,11);
+        Period p = Period.between(now,test);
+        System.out.println(p.getMonths() * 30.5  + p.getDays() + " jours ");
     }
+
+
 
     private static void deadlockExample() {
         var foxy = new Fox("Foxy");

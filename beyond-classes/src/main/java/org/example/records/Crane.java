@@ -13,6 +13,11 @@ public record Crane(int numberEggs, String name) {
     }
 
     @Override
+    public String toString(){
+        return this.name;
+    }
+
+    @Override
     public int numberEggs() {
         return this.numberEggs * 5;
     }

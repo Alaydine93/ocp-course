@@ -7,9 +7,7 @@ public class ZooGiftShop {
 
     public int admission(int basePrice) {
         var sale = new SaleTodayOnly() {
-            int dollarsOff() {
-                return 3;
-            }
+            int dollarsOff(){return 1;}
         };
         return basePrice - sale.dollarsOff();
     }
